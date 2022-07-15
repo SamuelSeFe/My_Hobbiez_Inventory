@@ -1,8 +1,8 @@
 class Hobby:
     
-    def __init__(self, _name, _location, _duration, _cost, _energy_expenditure, _reminder, _completed = False, _id = None):
+    def __init__(self, _name, _activity_area, _duration, _cost, _energy_expenditure, _reminder, _completed = False, _id = None):
         self.name = _name
-        self.location = _location
+        self.activity_area = _activity_area
         self.duration = _duration
         self.cost = _cost
         self.energy_expenditure = _energy_expenditure
