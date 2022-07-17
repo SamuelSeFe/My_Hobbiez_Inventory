@@ -35,3 +35,12 @@ def select(id):
         location = location_repository.select(result['location_id'])
         hobby = Hobby(result['name'], location, result['duration'], result['cost'], result['energy_expenditure'], result['reminder'], result['completed'], result['id'])
     return hobby
+
+def delete_all():
+    sql = "DELETE FROM hobbies"
+    run_sql(sql)
+
+def delete(id):
+    sql = "DELETE FROM hobbies WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

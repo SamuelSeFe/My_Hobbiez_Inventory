@@ -33,3 +33,11 @@ def select(id):
         location = Location(result['name'], result ['description'], result['distance_to_location'], result['reminder'], result['id'])
     return location
 
+def delete_all():
+    sql = "DELETE FROM locations"
+    run_sql(sql)
+
+def delete(id):
+    sql = "DELETE FROM locations WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
