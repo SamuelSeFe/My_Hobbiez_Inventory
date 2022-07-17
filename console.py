@@ -5,8 +5,9 @@ from models.location import Location
 import repositories.hobby_repository as hobby_repository
 import repositories.location_repository as location_repository
 
-location1 = Location("home", "inside", 0, "The best location! Suitable for all weathers. Recommended during winter")
+location1 = Location("home", "inside", 0, "The best location! Suitable for all weathers. Recommended especially during winter")
 location_repository.save(location1)
+location2 = Location("meadows", "outside", 10, "Great location for outdoor hobbies. Suitabale year round (except for winter, please don't go outside in the winter)")
 
 hobby1 = Hobby("Napping", location1, 30, 0, 25, "Best Hobby EVER!")
 hobby_repository.save(hobby1)
