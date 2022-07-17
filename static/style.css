@@ -1,0 +1,44 @@
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: flex-start;
+    height: 4rem;
+    background: #4584b1;
+    width: 100%;
+    color: #fff;
+    display: flex;
+}
+
+#logo {
+    margin: 40px;
+    font-size: 2rem;
+}
+
+nav {
+    background-color: #103594;
+    height: 2rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu li {
+    list-style: none;
+    margin-right: 1rem;
+    font-style: none;
+    font-size: 1rem;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu li a:hover {
+    color: aqua;
+}
