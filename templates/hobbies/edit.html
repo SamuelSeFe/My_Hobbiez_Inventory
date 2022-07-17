@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/hobbies/{{hobby.id}}" method="post">
+    <div>
+      <label for="name">Hobby:</label>
+      <input type="text" id="name" name="hobby_name" value="{{hobby.name}}" required autofocus>
+    </div>
+  
+    <div>
+      <label for="duration">Duration:</label>
+      <input type="number" id="duration" name="hobby_duration" value="{{hobby.duration}}" required>
+    </div>
+  
+    <div>
+      <label for="cost">Cost</label>
+      <input type="number" id="cost" name="hobby_cost" value="{{hobby.cost}}" required>
+    </div>
+  
+    <div>
+      <label for="energy_expenditure">Energy expenditure:</label>
+      <input type="text" id="energy_expenditure" name="hobby_energy_expenditure" value="{{hobby.energy_expenditure}}" required>
+    </div>
+  
+    <div>
+      <label for="completed">Completed:</label>
+      <select id="completed" name="hobby_completed">
+        <option value="true"
+        {% if hobby.completed == True %} selected="selected"
+        {% endif %}>
+        True
+        </option>
+
+        <option value="false"
+        {% if hobby.comleted == False %} selected=""selected
+        {% endif %}>
+        False
+        </option>
+      </select>
+    </div>
+  
+    <div>
+      <label for="location">Location:</label>
+      <select id="location" name="location_id">
+        {% for location in all_locations %}
+          <option value="{{ location.id }}"
+            {% if hobby.location.id == location.id %} selected="selected"
+            {% endif %}>
+            {{ location.name }}
+            </option>
+        {% endfor %}
+      </select>
+    </div>
+  
+    <div>
+        <label for="reminder">Reminder:</label>
+        <input type="text" id="reminder" name="hobby_reminder" value="{{hobby.reminder}}">
+    </div>
+
+    <button type="submit">Add Hobby</button>
+  
+  </form>
+  
+  {% endblock %}
+  

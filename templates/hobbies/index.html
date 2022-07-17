@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+{% for hobby in all_hobbies %}
+  <div class="hobby">
+    <div class="content">
+      <h3>Hobby location: {{hobby.location.name}}</h3>
+      <div class="description">
+        <a href="/hobbies/{{hobby.id}}">{{hobby.name}}</a>
+        <span class="duration">{{hobby.duration}} mins</span>
+        <br>
+        <br>
+      </div>
+      <div class="buttons">
+
+{% endfor %}
+
+{% endblock %}

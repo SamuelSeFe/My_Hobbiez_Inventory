@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <div>
+    <p>{{hobby.name}}</p>
+    <hr>
+    <p>{{hobby.location.name}}</p>
+    <p>{{hobby.duration}} mins</p>
+    <p>{{hobby.cost}}</p>
+    <p>{{hobby.energy_expenditure}}</p>
+    <p>Completed? {{hobby.completed}}</p>
+    <p>{{hobby.reminder}}</p>
+    <p><a href="/hobbies/{{hobby.id}}/edit">Edit</a></p>
+  </div>
+
+{% endblock %}
