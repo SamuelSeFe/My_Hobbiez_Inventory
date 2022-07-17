@@ -44,3 +44,8 @@ def delete(id):
     sql = "DELETE FROM hobbies WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+def update(hobby):
+    sql = "UPDATE hobbies SET (name, location_id, duration, cost, energy_expenditure, reminder, completed) = (%s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [hobby.name, hobby.location.id, hobby.duration, hobby.cost, hobby.energy_expenditure, hobby.reminder, hobby.completed, hobby.id]
+    run_sql(sql, values)
