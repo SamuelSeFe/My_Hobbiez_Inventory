@@ -15,8 +15,7 @@ def locations():
 # NEW
 @location_blueprint.route('/location/new', methods=['GET'])
 def new_location():
-    hobbies = hobby_repository.select_all()
-    return render_template('locations/new.html', all_hobbies = hobbies)
+    return render_template('locations/new.html')
 
 # CREATE
 @location_blueprint.route('/locations', methods=['POST'])
@@ -39,8 +38,7 @@ def show_location(id):
 @location_blueprint.route('/locations/<id>/edit', methods=['GET'])
 def edit_location(id):
     location = location_repository.select(id)
-    hobby = hobby_repository.select_all()
-    return render_template('hobbies/edit.html', location = location, all_hobbies = hobby)
+    return render_template('locations/edit.html', location = location)
 
 # UPDATE
 @location_blueprint.route('/locations/<id>', methods=['POST'])

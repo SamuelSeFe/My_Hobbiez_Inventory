@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+{% for location in all_locations %}
+  <div class="location">
+    <div class="content">
+      <h3>Location name: {{location.name}}</h3>
+      <div class="description">
+        <a href="/locations/{{location.id}}">{{location.name}}</a>
+        <span class="distance_to_location">{{location.distance_to_location}} mins</span>
+        <br>
+        <br>
+      </div>
+      <div class="buttons">
+
+{% endfor %}
+
+{% endblock %}

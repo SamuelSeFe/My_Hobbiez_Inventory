@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+  <div>
+    <p>{{location.name}}</p>
+    <hr>
+    <p>{{location.description}}</p>
+    <p>{{location.distance_to_location}} mins</p>
+    <p>{{location.reminder}}</p>
+    <p><a href="/locations/{{location.id}}/edit">Edit</a></p>
+  </div>
+
+{% endblock %}
