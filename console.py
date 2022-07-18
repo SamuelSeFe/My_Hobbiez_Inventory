@@ -1,3 +1,4 @@
+from operator import truediv
 import pdb
 from models.hobby import Hobby
 from models.location import Location
@@ -15,7 +16,7 @@ location_repository.save(location2)
 
 hobby1 = Hobby("Napping", location1, 30, 0, 25, "Best Hobby EVER!")
 hobby_repository.save(hobby1)
-hobby2 = Hobby("Listening to music", location2, 30, 0, 10, "Great for relaxing or using alongside other hobbies")
+hobby2 = Hobby("Listening to music", location2, 30, 0, 10, "Great for relaxing or using alongside other hobbies", True)
 hobby_repository.save(hobby2)
 
 

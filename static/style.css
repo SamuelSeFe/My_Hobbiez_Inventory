@@ -42,3 +42,10 @@ nav {
 .menu li a:hover {
     color: aqua;
 }
+
+.buttons {
+    margin-top: 10px;
+    margin-left: 2px;
+    font-size: 1.4em;
+    color: #aab8c2;
+}
