@@ -70,6 +70,11 @@ def update_hobby(id):
     hobby_repository.update(hobby)
     return redirect('/hobbies')
 
+@hobby_blueprint.route('/hobbies/<id>/completed', methods=['POST'])
+def completed_hobby(id):
+    hobby_repository.hobby_completed(id)
+    return redirect('/hobbies')
+
 
 # DELETE
 # DELTE (POST) '/hobbies/<id>

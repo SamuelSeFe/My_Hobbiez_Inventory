@@ -2,6 +2,7 @@
 {% block content %}
 
 <form action="/hobbies/{{hobby.id}}" method="post">
+    
     <div>
       <label for="name">Hobby:</label>
       <input type="text" id="name" name="hobby_name" value="{{hobby.name}}" required autofocus>

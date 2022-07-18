@@ -11,9 +11,15 @@
       </div>
     <br>
     <div class="buttons">
-      <form action="/hobbies/{{ hobby.id }}/delete" method="POST">
+      <form action="/hobbies/{{hobby.id}}/delete" method="POST">
         <input class="btn btn--danger" type="submit" value="Delete" />
       </form>
+      <br>
+      <form action="hobbies/{{hobby.id}}/completed" method="POST">
+        <input class="btn btn--danger" type="submit" value="Completed">
+      </form>
+
+
     </div>
     <br>
       {% if hobby.completed == True %}
@@ -21,7 +27,7 @@
       {% else %}
         <i class="fa fa-times fa-2x" aria-hidden="true"></i>
       {% endif %}
-</div>
+  </div>
 
 {% endfor %}
 {% endblock %}
