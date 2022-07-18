@@ -9,6 +9,9 @@
       <div class="description">
         <a href="/locations/{{location.id}}">{{location.name}}</a>
         <span class="distance_to_location">{{location.distance_to_location}} mins</span>
+        <form action="/locations/{{ location.id }}/delete" method="POST">
+          <input class="btn btn--danger" type="submit" value="Delete" />
+        </form>
         <br>
         <br>
       </div>
