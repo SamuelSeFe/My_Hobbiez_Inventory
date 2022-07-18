@@ -7,6 +7,13 @@
     <p>{{location.description}}</p>
     <p>{{location.distance_to_location}} mins</p>
     <p>{{location.reminder}}</p>
+    
+    <p>
+      {% for hobby in hobbies %}
+        {{ hobby.name }}
+      {% endfor %}
+    </p>
+    
     <p><a href="/locations/{{location.id}}/edit">Edit</a></p>
   </div>
 

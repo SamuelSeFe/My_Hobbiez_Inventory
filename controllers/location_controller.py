@@ -32,7 +32,8 @@ def create_location():
 @location_blueprint.route('/locations/<id>', methods=['GET'])
 def show_location(id):
     location = location_repository.select(id)
-    return render_template('locations/show.html', location = location)
+    hobbies = hobby_repository.select_by_location_id(location)
+    return render_template('locations/show.html', location = location, hobbies = hobbies)
 
 # EDIT
 @location_blueprint.route('/locations/<id>/edit', methods=['GET'])
@@ -48,7 +49,7 @@ def update_location(id):
     distance_to_location = request.form['location_distance_to_location']
     reminder             = request.form['location_reminder']
     location = Location(name, description, distance_to_location, reminder, id)
-    location_repository.save(location)
+    location_repository.update(location)
     return redirect('/locations')
 
 # DELETE

@@ -36,6 +36,17 @@ def select(id):
         hobby = Hobby(result['name'], location, result['duration'], result['cost'], result['energy_expenditure'], result['reminder'], result['completed'], result['id'])
     return hobby
 
+def select_by_location_id(location):
+    hobbies = []
+    sql = "SELECT * FROM hobbies WHERE location_id = %s"
+    values = [location.id]
+    results = run_sql(sql, values)
+ 
+    for result in results:
+        hobby = Hobby(result['name'], location, result['duration'], result['cost'], result['energy_expenditure'], result['reminder'], result['completed'], result['id'])
+        hobbies.append(hobby)
+    return hobbies
+
 def delete_all():
     sql = "DELETE FROM hobbies"
     run_sql(sql)
