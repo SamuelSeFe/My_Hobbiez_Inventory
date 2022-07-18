@@ -25,16 +25,16 @@
     <div>
       <label for="completed">Completed:</label>
       <select id="completed" name="hobby_completed">
+        <option value="false"
+        {% if hobby.comleted == False %} selected="selected"
+        {% endif %}>
+        No
+        </option>
+        
         <option value="true"
         {% if hobby.completed == True %} selected="selected"
         {% endif %}>
-        True
-        </option>
-
-        <option value="false"
-        {% if hobby.comleted == False %} selected=""selected
-        {% endif %}>
-        False
+        Yes
         </option>
       </select>
     </div>
