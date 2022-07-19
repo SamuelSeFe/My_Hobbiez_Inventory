@@ -1,5 +1,6 @@
 DROP TABLE IF EXISTS hobbies;
 DROP TABLE IF EXISTS locations;
+DROP TABLE IF EXISTS users;
 
 CREATE TABLE locations (
   id SERIAL PRIMARY KEY,
@@ -20,3 +21,9 @@ CREATE TABLE hobbies (
   reminder TEXT
 );
 
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255),
+  current_energy INT,
+  time_available INT
+);
