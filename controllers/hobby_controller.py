@@ -3,6 +3,7 @@ from flask import Blueprint
 from models.hobby import Hobby
 import repositories.hobby_repository as hobby_repository
 import repositories.location_repository as location_repository
+import repositories.user_repository as user_repository
 
 hobby_blueprint = Blueprint("hobbies", __name__)
 
@@ -11,7 +12,8 @@ hobby_blueprint = Blueprint("hobbies", __name__)
 @hobby_blueprint.route('/hobbies')
 def hobbies():
     hobbies = hobby_repository.select_all()
-    return render_template('hobbies/index.html', all_hobbies = hobbies)
+    user = user_repository.select(2)
+    return render_template('hobbies/index.html', all_hobbies = hobbies, user = user)
 
 # NEW
 # GET '/hobby/new'
@@ -70,12 +72,13 @@ def update_hobby(id):
 
 @hobby_blueprint.route('/hobbies/<id>/completed', methods=['POST'])
 def completed_hobby(id):
+    hobby = hobby_repository.select(id)
     hobby_repository.hobby_completed(id)
+    user_repository.completed_hobby(hobby, 2)
     return redirect('/hobbies')
 
-
 # DELETE
-# DELTE (POST) '/hobbies/<id>
+# DELETE (POST) '/hobbies/<id>
 @hobby_blueprint.route('/hobbies/<id>/delete', methods=['POST'])
 def delete_hobby(id):
     hobby_repository.delete(id)

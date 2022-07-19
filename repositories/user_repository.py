@@ -21,17 +21,34 @@ def select_all():
         users.append(user)
     return users
 
-def select(name):
+def select(id):
     user = None
-    sql = "SELECT * FROM users WHERE name = %s"
-    values = [name]
+    sql = "SELECT * FROM users WHERE id = %s"
+    values = [id]
     results = run_sql(sql, values)
 
     if results:
         result = results[0]
-        user = User(result['name'], result['current_energy'], result['time_available'])
+        user = User(result['name'], result['current_energy'], result['time_available'], result['id'])
     return user
 
 def delete_all():
     sql = "DELETE FROM users"
     run_sql(sql)
+
+def update(user):
+    sql = "UPDATE users SET (name, current_energy, time_available) = (%s, %s, %s) WHERE id = %s"
+    values = [user.name, user.current_energy, user.time_available, user.id]
+    run_sql(sql, values)
+
+# function taking hobby as argument and user as object and subtract
+
+def completed_hobby(hobby, user_id):
+    user = select(user_id)
+    breakpoint()
+    user_energy = user.current_energy - hobby.energy_expenditure
+    user_time = user.time_available - hobby.duration
+    user.current_energy = user_energy
+    user.time_available = user_time
+    update(user)
+    

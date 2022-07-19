@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+{% for user in users %}
+<div class="user">
+    <div class="user_description">
+        {{user.name}}
+        {{user.current_energy}}
+        {{user.time_available}} mins
+    </div>
+{% endfor %}
+
+{% endblock %}
