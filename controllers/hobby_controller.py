@@ -16,10 +16,11 @@ def hobbies():
     hobbies = hobby_repository.select_all()
     user = user_repository.select(1)
     error_message = "choose another hobby"
-    if request.args.get('error=true') == True:
+    if request.args.get('error') is not None:
         return render_template('hobbies/index.html', error_message = error_message, all_hobbies = hobbies, user = user)
     else:
         return render_template('hobbies/index.html', all_hobbies = hobbies, user = user)
+   
 
 # NEW
 # GET '/hobby/new'
