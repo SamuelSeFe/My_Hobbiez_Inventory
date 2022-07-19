@@ -9,5 +9,10 @@ user_blueprint = Blueprint("users", __name__)
 # INDEX
 @user_blueprint.route('/users')
 def user():
-    user = user_repository.select(name)
-    return render_template('user/index.html', user = user)
+    user = user_repository.select_all(name)
+    return render_template('users/index.html', user = user)
+
+# NEW
+@user_blueprint.route('/user/new', methods=['GET'])
+def new_user():
+    return render_template('users/new.html')

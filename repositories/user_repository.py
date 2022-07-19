@@ -10,6 +10,17 @@ def save(user):
     user.id = id
     return user
 
+def select_all():
+    users = []
+
+    sql = "SELECT * FROM users"
+    results = run_sql(sql)
+
+    for row in results:
+        user = User(row['name'], row['current_energy'], row['time_available'], row['id'])
+        users.append(user)
+    return users
+
 def select(name):
     user = None
     sql = "SELECT * FROM users WHERE name = %s"
