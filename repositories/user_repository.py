@@ -1,7 +1,6 @@
 from db.run_sql import run_sql
 
 from models.user import User
-from models.hobby import Hobby
 
 def save(user):
     sql = "INSERT INTO users (name, current_energy, time_available) VALUES (%s, %s, %s) RETURNING *"

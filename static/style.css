@@ -43,3 +43,11 @@ nav {
     color: aqua;
 }
 
+.errors {
+    background: red;
+    height: 50px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

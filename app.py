@@ -2,7 +2,7 @@ from flask import Flask, render_template
 
 from controllers.hobby_controller import hobby_blueprint
 from controllers.location_controller import location_blueprint
-from controllers.user_controller import user, user_blueprint
+from controllers.user_controller import user_blueprint
 
 app = Flask(__name__)
 

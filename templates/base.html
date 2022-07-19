@@ -20,14 +20,18 @@
             <li><a href="/locations">Locations</a></li>
             <li><a href="/location/new">New Location</a></li>
             <li><a href="/users">User</a></li>
-            <li><a href="/user/new">New User</a></li>
+            <li><a href="/user/new">You</a></li>
         </ul>
     </nav>    
+            
+    {% if error_message %}
+        <div class="errors">{{error_message}}</div>
+    {% endif %}
     
-      <div class="container">
+    <div class="container">
     {% block content %}
     {% endblock %}
-  </div>
+    </div>
 </body>
 </html>
 

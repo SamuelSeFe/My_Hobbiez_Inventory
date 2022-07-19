@@ -1,6 +1,5 @@
 from db.run_sql import run_sql
 
-from models.hobby import Hobby
 from models.location import Location
 
 def save(location):

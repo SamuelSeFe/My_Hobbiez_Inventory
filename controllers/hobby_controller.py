@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
+
 from models.hobby import Hobby
+
 import repositories.hobby_repository as hobby_repository
 import repositories.location_repository as location_repository
 import repositories.user_repository as user_repository
@@ -13,7 +15,11 @@ hobby_blueprint = Blueprint("hobbies", __name__)
 def hobbies():
     hobbies = hobby_repository.select_all()
     user = user_repository.select(1)
-    return render_template('hobbies/index.html', all_hobbies = hobbies, user = user)
+    error_message = "choose another hobby"
+    if request.args.get('error=true') == True:
+        return render_template('hobbies/index.html', error_message = error_message, all_hobbies = hobbies, user = user)
+    else:
+        return render_template('hobbies/index.html', all_hobbies = hobbies, user = user)
 
 # NEW
 # GET '/hobby/new'
@@ -70,12 +76,19 @@ def update_hobby(id):
     hobby_repository.update(hobby)
     return redirect('/hobbies')
 
+
 @hobby_blueprint.route('/hobbies/<id>/completed', methods=['POST'])
 def completed_hobby(id):
     hobby = hobby_repository.select(id)
-    hobby_repository.hobby_completed(id)
-    user_repository.completed_hobby(hobby, 1)
-    return redirect('/hobbies')
+    user = user_repository.select(1)
+    if user.current_energy >= hobby.energy_expenditure and user.time_available >= hobby.duration:
+        hobby_repository.hobby_completed(id)
+        user_repository.completed_hobby(hobby, 1)
+        return redirect('/hobbies')
+    else:
+        return redirect("/hobbies?error=true")
+        # return render_template('hobbies/index.html', all_hobbies = hobbies, user = user, errors = "choose another hobby")
+        
 
 # DELETE
 # DELETE (POST) '/hobbies/<id>

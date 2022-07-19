@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
+
 from models.location import Location
+
 import repositories.location_repository as location_repository
 import repositories.hobby_repository as hobby_repository
 

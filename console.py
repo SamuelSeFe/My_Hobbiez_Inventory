@@ -1,8 +1,7 @@
-from operator import truediv
 import pdb
+
 from models.hobby import Hobby
 from models.location import Location
-from models.user import User
 
 import repositories.hobby_repository as hobby_repository
 import repositories.location_repository as location_repository
