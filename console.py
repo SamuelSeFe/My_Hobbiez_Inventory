@@ -30,9 +30,6 @@ hobby_repository.save(hobby3)
 hobby4 = Hobby("Watch a film", location1, 150, 10, -15, "Once every week or two")
 hobby_repository.save(hobby4)
 
-user1 = User(None, None, None)
-user_repository.save(user1)
-
 
 
 pdb.set_trace()

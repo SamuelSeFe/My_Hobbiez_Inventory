@@ -1,6 +1,7 @@
 from db.run_sql import run_sql
 
 from models.user import User
+from models.hobby import Hobby
 
 def save(user):
     sql = "INSERT INTO users (name, current_energy, time_available) VALUES (%s, %s, %s) RETURNING *"
@@ -41,12 +42,9 @@ def update(user):
     values = [user.name, user.current_energy, user.time_available, user.id]
     run_sql(sql, values)
 
-# function taking hobby as argument and user as object and subtract
-
 def completed_hobby(hobby, user_id):
     user = select(user_id)
-    breakpoint()
-    user_energy = user.current_energy - hobby.energy_expenditure
+    user_energy = user.current_energy + hobby.energy_expenditure
     user_time = user.time_available - hobby.duration
     user.current_energy = user_energy
     user.time_available = user_time

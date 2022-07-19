@@ -12,7 +12,7 @@ hobby_blueprint = Blueprint("hobbies", __name__)
 @hobby_blueprint.route('/hobbies')
 def hobbies():
     hobbies = hobby_repository.select_all()
-    user = user_repository.select(2)
+    user = user_repository.select(1)
     return render_template('hobbies/index.html', all_hobbies = hobbies, user = user)
 
 # NEW
@@ -74,7 +74,7 @@ def update_hobby(id):
 def completed_hobby(id):
     hobby = hobby_repository.select(id)
     hobby_repository.hobby_completed(id)
-    user_repository.completed_hobby(hobby, 2)
+    user_repository.completed_hobby(hobby, 1)
     return redirect('/hobbies')
 
 # DELETE
