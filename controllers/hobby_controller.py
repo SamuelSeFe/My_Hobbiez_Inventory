@@ -1,5 +1,3 @@
-from subprocess import CompletedProcess
-from tokenize import ContStr
 from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from models.hobby import Hobby

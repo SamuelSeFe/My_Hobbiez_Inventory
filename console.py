@@ -2,12 +2,15 @@ from operator import truediv
 import pdb
 from models.hobby import Hobby
 from models.location import Location
+from models.user import User
 
 import repositories.hobby_repository as hobby_repository
 import repositories.location_repository as location_repository
+import repositories.user_repository as user_repository
 
 location_repository.delete_all()
 hobby_repository.delete_all()
+user_repository.delete_all()
 
 location1 = Location("home", "inside", 0, "The best location! Suitable for all weathers. Recommended especially during winter")
 location_repository.save(location1)
@@ -27,7 +30,8 @@ hobby_repository.save(hobby3)
 hobby4 = Hobby("Watch a film", location1, 150, 10, -15, "Once every week or two")
 hobby_repository.save(hobby4)
 
-
+user1 = User()
+user_repository.save(user1)
 
 
 
