@@ -1,14 +1,11 @@
 body {
-    background: url('/static/images/background.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    color: #696969;
-    font-family: fantasy; 
+    color: #242428;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
     font-size: large;
     font-weight: bold;
     padding: 0px;
     margin: 0px;
-  }
+}
 
 header {
     display: flex;
@@ -55,7 +52,7 @@ nav {
     color: aqua;
 }
 
-.errors {
+.error_message {
     background: red;
     height: 50px;
     margin: 10px;

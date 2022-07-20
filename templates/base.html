@@ -23,12 +23,10 @@
             <li><a href="/user/new">You</a></li>
         </ul>
     </nav>    
-            
-    
     
     <div class="container">
         {% if error_message %}
-        <div class="errors">{{error_message}}</div>
+        <div class="error_message">{{error_message}}</div>
         {% endif %}
 
     {% block content %}
