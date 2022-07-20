@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div id="user-display">Name:{{ user.name }} - Your energy: {{ user.current_energy }} - Time available: {{ user.time_available }}</div>
+<div id="user-display">
+  <p>{{ user.name }}</p>
+  <p>Your energy: {{ user.current_energy }}</p>
+  <p>Your available time: {{ user.time_available }} mins</p>
+</div>
 
 <section class="hobby-list">
   {% for hobby in all_hobbies %}
@@ -10,7 +14,8 @@
 
         <div class="hobby-link">
           <a href="/hobbies/{{hobby.id}}">{{hobby.name}}:</a>
-          <span class="duration">{{hobby.duration}} mins</span>
+          <br>
+          <span class="hobby-index-duration">{{hobby.duration}} mins</span>
         </div>
       <br>
 

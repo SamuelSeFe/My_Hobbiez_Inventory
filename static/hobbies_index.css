@@ -17,6 +17,10 @@
     padding: 5px;
 }
 
+.hobby-link {
+    text-align: center;
+}
+
 .hobby-link a {
     text-decoration: none;
 }
