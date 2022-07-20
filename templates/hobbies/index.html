@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div id="user-display">Name:{{ user.name }} - Your energy: {{ user.current_energy }} - Time available: {{ user.time_available }}</div>
+
+
 {% for hobby in all_hobbies %}
   <div class="hobby">
     <h3>Hobby location: {{hobby.location.name}}</h3>
@@ -29,8 +32,5 @@
   </div>
 
 {% endfor %}
-
-<div>{{ user.name }} - {{ user.current_energy }} - {{ user.time_available }}</div>
-
 
 {% endblock %}

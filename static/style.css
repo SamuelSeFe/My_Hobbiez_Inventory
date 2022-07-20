@@ -1,4 +1,5 @@
 body {
+    background-color: #DCE3E5;
     color: #242428;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
     font-size: large;
@@ -13,7 +14,7 @@ header {
     align-items: center;
     align-self: flex-start;
     height: 4rem;
-    background: #4584b1;
+    background: #2C374A;
     width: 100%;
     color: #fff;
     display: flex;
@@ -25,7 +26,7 @@ header {
 }
 
 nav {
-    background-color: #103594;
+    background-color: #7E98A0;
     height: 2rem;
     display: flex;
     flex-direction: row;
@@ -50,6 +51,20 @@ nav {
 
 .menu li a:hover {
     color: aqua;
+}
+
+h2 {
+    border: 1px solid black;
+    display: inline;
+    border-radius: 5px;
+}
+
+.wrapper_index {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40px;
+    text-align: center;
 }
 
 .error_message {
