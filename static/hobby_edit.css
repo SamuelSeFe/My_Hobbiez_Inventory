@@ -1,0 +1,20 @@
+#hobby-edit {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+#hobby-edit label {
+    text-align:right;
+    width: 200px;
+    display: inline-block;
+}
+
+.hobby-edit-inputs {
+    margin: 5px;
+}
+
+#edit-hobby {
+    text-align: center;
+}

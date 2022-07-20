@@ -1,0 +1,15 @@
+#show-hobby {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+#hobby-edit-button {
+    text-align: center;
+}
+
+#hobby-edit-button a {
+    text-decoration: none;
+    color: black;
+}
