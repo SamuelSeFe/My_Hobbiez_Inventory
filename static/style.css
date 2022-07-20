@@ -68,7 +68,7 @@ h2 {
 }
 
 .error_message {
-    background: red;
+    background: rgb(142, 100, 56);
     height: 50px;
     margin: 10px;
     display: flex;
