@@ -1,0 +1,9 @@
+.user-list {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.user-attribute {
+    color: #8b764e;
+}

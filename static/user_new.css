@@ -1,0 +1,20 @@
+#user-creator {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+#user-creator label {
+    text-align:right;
+    width: 200px;
+    display: inline-block;
+}
+
+.user-creator-inputs {
+    margin: 5px;
+}
+
+#add-user {
+    text-align: center;
+}

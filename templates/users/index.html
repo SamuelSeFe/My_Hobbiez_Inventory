@@ -1,14 +1,20 @@
 {% extends "base.html" %}
 {% block content %}
 
+<section class="user-list">
 
-{% for user in users %}
-<div class="user">
-    <div class="user_description">
-        {{user.name}}
-        {{user.current_energy}}
-        {{user.time_available}} mins
+    {% for user in users %}
+    <div class="user-description">
+        <span>Your name: <b class="user-attribute">{{user.name}}</b></span>
+        <br>
+        <br>
+        <span>Your current energy: <b class="user-attribute">{{user.current_energy}}</b></span>
+        <br>
+        <br>
+        <span>Your free time: <b class="user-attribute">{{user.time_available}} mins</b></span>
     </div>
-{% endfor %}
+    {% endfor %}
+
+</section>
 
 {% endblock %}
