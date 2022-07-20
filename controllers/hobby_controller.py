@@ -16,7 +16,7 @@ hobby_blueprint = Blueprint("hobbies", __name__)
 def hobbies():
     hobbies = hobby_repository.select_all()
     user = user_repository.select(1)
-    error_message = "Oh no! Looks like you can't do that hobby today. Why don't you try choosing another?"
+    error_message = "Oh no! Looks like you can't do that hobby just now. Why don't you try choosing another?"
     if request.args.get('error') is not None:
         return render_template('hobbies/index.html', error_message = error_message, all_hobbies = hobbies, user = user)
     else:
