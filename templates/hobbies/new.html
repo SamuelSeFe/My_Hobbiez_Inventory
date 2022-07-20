@@ -1,36 +1,46 @@
 {% extends "base.html" %}
 {% block content %}
 
-<form action="/hobbies" method="post">
-  <div>
-    <label for="name">Hobby:</label>
+<style type="text/css">
+  label{
+    width: 200px;
+    display: inline-block;
+  }
+
+
+</style>
+
+<form id="hobby-creator" action="/hobbies" method="post">
+
+  <div class="hobby-creator-inputs">
+    <label for="name">Hobby name:</label>
     <input type="text" id="name" name="hobby_name" placeholder="Hobby" required autofocus>
   </div>
 
-  <div>
+  <div class="hobby-creator-inputs">
     <label for="duration">Duration:</label>
     <input type="number" id="duration" name="hobby_duration" placeholder="Duration" required>
   </div>
 
-  <div>
-    <label for="cost">Cost</label>
+  <div class="hobby-creator-inputs">
+    <label for="cost">Cost:</label>
     <input type="number" id="cost" name="hobby_cost" placeholder="Cost" required>
   </div>
 
-  <div>
+  <div class="hobby-creator-inputs">
     <label for="energy_expenditure">Energy expenditure:</label>
     <input type="number" id="energy_expenditure" name="hobby_energy_expenditure" placeholder="Energy expenditure">
   </div>
 
-  <div>
+  <div class="hobby-creator-inputs">
     <label for="completed">Completed:</label>
     <select id="completed" name="hobby_completed">
-      <option value="true">True</option>
-      <option value="false">False</option>
+      <option value="false">No</option>
+      <option value="true">Yes</option>
     </select>
   </div>
 
-  <div>
+  <div class="hobby-creator-inputs">
     <label for="location">Location:</label>
     <select id="location" name="location_id">
       {% for location in all_locations %}
@@ -39,13 +49,15 @@
     </select>
   </div>
 
-  <div>
+  <div class="hobby-creator-inputs">
     <label for="reminder">Reminder:</label>
     <input type="text" id="reminder" name="hobby_reminder" placeholder="Reminder">
   </div>
 
-  <button type="submit">Add Hobby</button>
-
 </form>
+
+<div id="add-hobby">
+  <button type="submit">Add Hobby</button>
+</div>
 
 {% endblock %}

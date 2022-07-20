@@ -75,3 +75,11 @@ h2 {
     align-items: center;
     justify-content: center;
 }
+
+.text a {
+    text-decoration: none;
+}
+
+.text a:hover {
+    color: rgb(34, 146, 146);
+}

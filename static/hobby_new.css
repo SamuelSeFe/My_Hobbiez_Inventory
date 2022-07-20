@@ -1,0 +1,18 @@
+#hobby-creator {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+#hobby-creator label {
+    text-align:right;
+}
+
+.hobby-creator-inputs {
+    margin: 5px;
+}
+
+#add-hobby {
+    text-align: center;
+}
