@@ -1,30 +1,33 @@
 {% extends "base.html" %}
 {% block content %}
 
-<form action="/locations/{{location.id}}" method="post">
-    <div>
-      <label for="name">Location:</label>
-      <input type="text" id="name" name="location_name" value="{{location.name}}" required autofocus>
-    </div>
-  
-    <div>
-      <label for="description">Description:</label>
-      <input type="text" id="description" name="location_description" value="{{location.description}}" required>
-    </div>
-  
-    <div>
-      <label for="distance_to_location">Distance to location:</label>
-      <input type="number" id="distance_to_location" name="location_distance_to_location" value="{{location.distance_to_location}}" required>
-    </div>
-  
-    <div>
-      <label for="reminder">Reminder:</label>
-      <input type="text" id="reminder" name="location_reminder" value="{{location.reminder}}" required>
-    </div>
+<form id="location-edit" action="/locations/{{location.id}}" method="post">
+   
+  <div class="location-edit-inputs">
+    <label for="name">Location:</label>
+    <input type="text" id="name" name="location_name" value="{{location.name}}" required autofocus>
+  </div>
 
+  <div class="location-edit-inputs">
+    <label for="description">Description:</label>
+    <input type="text" id="description" name="location_description" value="{{location.description}}" required>
+  </div>
+
+  <div class="location-edit-inputs">
+    <label for="distance_to_location">Distance to location:</label>
+    <input type="number" id="distance_to_location" name="location_distance_to_location" value="{{location.distance_to_location}}" required>
+  </div>
+
+  <div class="location-edit-inputs">
+    <label for="reminder">Reminder:</label>
+    <input type="text" id="reminder" name="location_reminder" value="{{location.reminder}}" required>
+  </div>
+
+  <div id="edit-location">
     <button type="submit">Edit Location</button>
-  
-  </form>
+  </div>
+
+</form>
   
   {% endblock %}
   

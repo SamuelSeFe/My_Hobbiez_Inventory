@@ -1,20 +1,33 @@
 {% extends "base.html" %}
 {% block content %}
 
-  <div>
-    <p>{{location.name}}</p>
+  <div id="show-location">
+    <span>Location: {{location.name}}</span>
     <hr>
-    <p>{{location.description}}</p>
-    <p>{{location.distance_to_location}} mins</p>
-    <p>{{location.reminder}}</p>
+    <span>Description: {{location.description}}</span>
+    <br>
+    <span>Walking time to location: {{location.distance_to_location}} mins</span>
+    <br>
+    <span>Reminder: {{location.reminder}}</span>
     
-    <p>
-      {% for hobby in hobbies %}
-        {{ hobby.name }}
-      {% endfor %}
-    </p>
+    <div id="location-edit-button">
+      <button><a href="/locations/{{location.id}}/edit">Edit</a></button>
+    </div>
+
+    <hr>
+      Hobbies that you can do at this location:
+      <br>
+      <div id="back-to-hobby-show">
+        {% for hobby in hobbies %}
+        <ul>
+          <li><a href="/hobbies/{{hobby.id}}">{{ hobby.name }}</a></li>
+          <br>
+        </ul>
+        {% endfor %}
+      </div>
     
-    <p><a href="/locations/{{location.id}}/edit">Edit</a></p>
+    
+
   </div>
 
 {% endblock %}

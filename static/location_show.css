@@ -1,0 +1,27 @@
+#show-location {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+#location-edit-button {
+    text-align: center;
+}
+
+#location-edit-button a {
+    text-decoration: none;
+    color: black;
+}
+
+#back-to-hobby-show > ul > li > a {
+    text-decoration: none;
+}
+
+#back-to-hobby-show ul li a:hover {
+    color:rgb(34, 146, 146)
+}
+
+#back-to-hobby-show > ul {
+    list-style-type: none;
+}

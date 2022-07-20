@@ -1,0 +1,20 @@
+#location-edit {
+    display: flex;
+    flex-direction: column;
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+#location-edit label {
+    text-align:right;
+    width: 200px;
+    display: inline-block;
+}
+
+.location-edit-inputs {
+    margin: 5px;
+}
+
+#edit-location {
+    text-align: center;
+}
