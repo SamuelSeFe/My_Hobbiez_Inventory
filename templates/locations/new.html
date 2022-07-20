@@ -1,28 +1,31 @@
 {% extends "base.html" %}
 {% block content %}
 
-<form action="/locations" method="post">
-    <div>
-      <label for="name">Location:</label>
-      <input type="text" id="name" name="location_name" placeholder="Name of location" required autofocus>
-    </div>
-  
-    <div>
-      <label for="description">Description:</label>
-      <input type="text" id="description" name="location_description" placeholder="Description of location" required>
-    </div>
-  
-    <div>
-      <label for="distance_to_location">Distance to location:</label>
-      <input type="number" id="distance_to_location" name="location_distance_to_location" placeholder="Distance to location" required>
-    </div>
-  
-    <div>
-      <label for="reminder">Reminder:</label>
-      <input type="text" id="reminder" name="location_reminder" placeholder="Location reminder" required>
-    </div>
+<form id="location-creator" action="/locations" method="post">
 
+  <div class="location-creator-inputs">
+    <label for="name">Location:</label>
+    <input type="text" id="name" name="location_name" placeholder="Name of location" required autofocus>
+  </div>
+
+  <div class="location-creator-inputs">
+    <label for="description">Description:</label>
+    <input type="text" id="description" name="location_description" placeholder="Description of location" required>
+  </div>
+
+  <div class="location-creator-inputs">
+    <label for="distance_to_location">Distance to location:</label>
+    <input type="number" id="distance_to_location" name="location_distance_to_location" placeholder="Distance to location" required>
+  </div>
+
+  <div class="location-creator-inputs">
+    <label for="reminder">Reminder:</label>
+    <input type="text" id="reminder" name="location_reminder" placeholder="Location reminder" required>
+  </div>
+
+  <div id="add-location">
     <button type="submit">Add Location</button>
+  </div>
 
 </form>
 
