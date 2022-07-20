@@ -14,6 +14,19 @@
     border: 1px solid #242428;
     border-radius: 5px;
     overflow: hidden;
+    padding: 5px;
+}
+
+.hobby-link a {
+    text-decoration: none;
+}
+
+.hobby-link a:hover {
+    color: rgb(34, 146, 146);
+}
+
+.hobby-link a:link, a:visited{
+    color: #8b764e;
 }
 
 .hobby-buttons {

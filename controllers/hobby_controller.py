@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 
 from models.hobby import Hobby
+from models.user import User
 
 import repositories.hobby_repository as hobby_repository
 import repositories.location_repository as location_repository

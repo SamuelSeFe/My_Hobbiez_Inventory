@@ -43,7 +43,7 @@ def update(user):
 
 def completed_hobby(hobby, user_id):
     user = select(user_id)
-    user_energy = user.current_energy + hobby.energy_expenditure
+    user_energy = user.current_energy - hobby.energy_expenditure
     user_time = user.time_available - hobby.duration
     user.current_energy = user_energy
     user.time_available = user_time
