@@ -1,0 +1,38 @@
+.location-list {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.location-description {
+    margin: 5px;
+    border: 1px solid #242428;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 5px;
+}
+
+.location-link {
+    text-align: center;
+}
+
+.location-link a {
+    text-decoration: none;
+}
+
+.location-link a:hover {
+    color: rgb(34, 146, 146);
+}
+
+.location-link a:link, a:visited{
+    color: #8b764e;
+}
+
+.location-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+#location-title {
+    text-align: center;
+}
