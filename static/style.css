@@ -1,3 +1,15 @@
+body {
+    background: url('/static/images/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #696969;
+    font-family: fantasy; 
+    font-size: large;
+    font-weight: bold;
+    padding: 0px;
+    margin: 0px;
+  }
+
 header {
     display: flex;
     flex-direction: row;

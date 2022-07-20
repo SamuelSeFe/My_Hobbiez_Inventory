@@ -24,23 +24,6 @@
     </div>
   
     <div>
-      <label for="completed">Completed:</label>
-      <select id="completed" name="hobby_completed">
-        <option value="false"
-        {% if hobby.comleted == False %} selected="selected"
-        {% endif %}>
-        No
-        </option>
-        
-        <option value="true"
-        {% if hobby.completed == True %} selected="selected"
-        {% endif %}>
-        Yes
-        </option>
-      </select>
-    </div>
-  
-    <div>
       <label for="location">Location:</label>
       <select id="location" name="location_id">
         {% for location in all_locations %}

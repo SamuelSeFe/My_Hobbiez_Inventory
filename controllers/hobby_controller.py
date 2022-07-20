@@ -88,7 +88,6 @@ def completed_hobby(id):
         return redirect('/hobbies')
     else:
         return redirect("/hobbies?error=true")
-        # return render_template('hobbies/index.html', all_hobbies = hobbies, user = user, errors = "choose another hobby")
         
 
 # DELETE
