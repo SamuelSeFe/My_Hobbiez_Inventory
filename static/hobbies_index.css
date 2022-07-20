@@ -2,3 +2,26 @@
     margin-top: 10px;
     text-align: center;
 }
+
+.hobby-list {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+
+.hobby-description {
+    margin: 5px;
+    border: 1px solid #242428;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.hobby-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.check-mark {
+    display: flex;
+    justify-content: center;
+}

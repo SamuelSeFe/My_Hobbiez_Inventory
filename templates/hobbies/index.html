@@ -3,34 +3,39 @@
 
 <div id="user-display">Name:{{ user.name }} - Your energy: {{ user.current_energy }} - Time available: {{ user.time_available }}</div>
 
+<section class="hobby-list">
+  {% for hobby in all_hobbies %}
+    <div class="hobby-description">
+      <h3>Hobby location: {{hobby.location.name}}</h3>
 
-{% for hobby in all_hobbies %}
-  <div class="hobby">
-    <h3>Hobby location: {{hobby.location.name}}</h3>
-      <div class="hobby_description">
-        <a href="/hobbies/{{hobby.id}}">{{hobby.name}}</a>
-        <span class="duration">{{hobby.duration}} mins</span>
-      </div>
-    <br>
-    <div class="buttons">
-      <form action="/hobbies/{{hobby.id}}/delete" method="POST">
-        <input class="btn btn--danger" type="submit" value="Delete" />
-      </form>
+        <div>
+          <a href="/hobbies/{{hobby.id}}">{{hobby.name}}</a>
+          <span class="duration">{{hobby.duration}} mins</span>
+        </div>
       <br>
-      <form action="hobbies/{{hobby.id}}/completed" method="POST">
-        <input class="btn btn--danger" type="submit" value="Completed">
-      </form>
 
+      <div class="hobby-buttons">
+        <form action="/hobbies/{{hobby.id}}/delete" method="POST">
+          <input class="btn btn--danger" type="submit" value="Delete" />
+        </form>
+        <br>
+        <form action="hobbies/{{hobby.id}}/completed" method="POST">
+          <input class="btn btn--danger" type="submit" value="Completed">
+        </form>
+      </div>
 
+      <br>
+      <section class="check-mark">
+        {% if hobby.completed == True %}
+          <i class="fa fa-check fa-2x" style="color:green" aria-hidden="true"></i>
+        {% else %}
+          <i class="fa fa-times fa-2x" aria-hidden="true"></i>
+        {% endif %}
+      </section>
     </div>
-    <br>
-      {% if hobby.completed == True %}
-        <i class="fa fa-check fa-2x" style="color:green" aria-hidden="true"></i>
-      {% else %}
-        <i class="fa fa-times fa-2x" aria-hidden="true"></i>
-      {% endif %}
-  </div>
 
-{% endfor %}
+  {% endfor %}
+
+</section>
 
 {% endblock %}
