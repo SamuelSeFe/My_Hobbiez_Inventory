@@ -28,6 +28,8 @@ hobby3 = Hobby("Painting", location1, 60, 0, 10, "Good for the mind")
 hobby_repository.save(hobby3)
 hobby4 = Hobby("Watch a film", location4, 150, 10, 15, "Once every week or two")
 hobby_repository.save(hobby4)
+hobby5 = Hobby("Go for a run", location3, 45, 0, 40, "Good for the body")
+hobby_repository.save(hobby5)
 
 
 
